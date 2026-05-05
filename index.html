@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envía Colvanes S.A.S. | Chapinero Calle 61</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root { --envia-red: #e31e24; --deep-dark: #020202; --card-dark: #0a0a0a; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--deep-dark); color: #ffffff; overflow-x: hidden; }
+        
+        .glass-dark {
+            background: rgba(15, 15, 15, 0.7);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .section-hover:hover .glass-dark {
+            border-color: var(--envia-red);
+            box-shadow: 0 0 40px rgba(227, 30, 36, 0.15);
+            transform: translateY(-10px);
+            background: rgba(20, 20, 20, 0.9);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 40%, var(--envia-red) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-img-box {
+            animation: float 6s ease-in-out infinite;
+            filter: drop-shadow(0 0 30px rgba(227, 30, 36, 0.2));
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-25px) scale(1.02); }
+        }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--deep-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--envia-red); border-radius: 10px; }
+
+        /* Filtro oscuro para el mapa */
+        .map-container iframe {
+            filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-[100] px-6 py-6">
+        <div class="max-w-7xl mx-auto glass-dark rounded-[2rem] px-8 py-4 flex justify-between items-center border-white/5">
+            <div class="flex items-center gap-4">
+                <img src="https://empleos.net/rhmanager/logos/original_size/71188_20210325113156.png" alt="Envía Logo" class="h-10">
+                <span class="hidden md:block text-[10px] font-bold tracking-[0.4em] uppercase opacity-40 border-l border-white/10 pl-4">Colvanes S.A.S.</span>
+            </div>
+            <a href="https://wa.me/573143996019" target="_blank" class="bg-[#e31e24] hover:bg-white hover:text-black px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-300 shadow-lg shadow-red-900/20">
+                Cotizar WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center pt-20 px-6">
+        <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none" 
+             style="background-image: radial-gradient(circle at 20% 30%, #e31e24 0%, transparent 40%);"></div>
+        
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center relative">
+            <div class="reveal active">
+                <h2 class="text-red-600 font-bold tracking-[0.6em] uppercase text-[10px] mb-6 block">Logística de Élite • Chapinero</h2>
+                <h1 class="text-6xl md:text-8xl font-black leading-[0.85] mb-8 italic tracking-tighter">
+                    PASIÓN <br><span class="gradient-text uppercase">POR LO QUE HACEMOS</span>
+                </h1>
+                <p class="text-zinc-500 text-xl mb-12 font-light leading-relaxed max-w-lg">
+                    En <strong>Envía Colvanes S.A.S. Chapinero Calle 61</strong>, transformamos la logística en una experiencia premium. Seguridad total para sus documentos, paquetes y mercancía.
+                </p>
+                <div class="flex flex-wrap gap-6">
+                    <a href="https://wa.me/573143996019" target="_blank" class="bg-white text-black px-12 py-5 rounded-2xl font-black hover:bg-red-600 hover:text-white transition-all duration-500 shadow-2xl flex items-center gap-4 uppercase text-sm">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Solicitar Recogida
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-img-box flex justify-center lg:justify-end reveal active">
+                <div class="glass-dark p-12 md:p-20 rounded-[4rem] border-white/10">
+                    <img src="https://empleos.net/rhmanager/logos/original_size/71188_20210325113156.png" 
+                         alt="Envía Corporativo" 
+                         class="w-full max-w-[550px] object-contain drop-shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-40 px-6 bg-[#040404]">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-6 reveal">
+                <div>
+                    <h3 class="text-5xl font-black italic uppercase tracking-tighter">Servicios <span class="text-red-600">Premium</span></h3>
+                    <p class="text-zinc-600 mt-2 tracking-widest uppercase text-[10px] font-bold">Excelencia operativa Envia Colvanes S.A.S.</p>
+                </div>
+                <a href="https://wa.me/573143996019" target="_blank" class="text-red-600 font-bold hover:underline italic">Consultar todos los servicios →</a>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="section-hover">
+                    <div class="glass-dark p-12 rounded-[3.5rem] h-full">
+                        <i class="fa-solid fa-file-shield text-3xl text-red-600 mb-10"></i>
+                        <h4 class="text-2xl font-bold mb-4 uppercase italic">Documentos</h4>
+                        <p class="text-zinc-500 text-sm leading-relaxed">Mensajería expresa nacional con protocolos de seguridad máxima.</p>
+                    </div>
+                </div>
+                <div class="section-hover">
+                    <div class="glass-dark p-12 rounded-[3.5rem] h-full border-t-2 border-red-600/30">
+                        <i class="fa-solid fa-box-open text-3xl text-red-600 mb-10"></i>
+                        <h4 class="text-2xl font-bold mb-4 uppercase italic">Paquetes</h4>
+                        <p class="text-zinc-500 text-sm leading-relaxed">Embalaje técnico y transporte de encomiendas con monitoreo GPS.</p>
+                    </div>
+                </div>
+                <div class="section-hover">
+                    <div class="glass-dark p-12 rounded-[3.5rem] h-full">
+                        <i class="fa-solid fa-truck-ramp-box text-3xl text-red-600 mb-10"></i>
+                        <h4 class="text-2xl font-bold mb-4 uppercase italic">Mercancía</h4>
+                        <p class="text-zinc-500 text-sm leading-relaxed">Distribución de carga pesada y logística para E-commerce.</p>
+                    </div>
+                </div>
+                <div class="section-hover">
+                    <div class="glass-dark p-12 rounded-[3.5rem] h-full bg-gradient-to-br from-red-600/10 to-transparent">
+                        <span class="bg-red-600 text-[9px] font-black px-3 py-1 rounded-full uppercase mb-6 inline-block">Zona Chapinero</span>
+                        <h4 class="text-2xl font-bold mb-4 uppercase italic leading-none">Recogida <br><span class="text-red-600">SIN COSTO</span></h4>
+                        <p class="text-zinc-300 text-xs mb-8 font-bold italic">Recogemos sus envíos en su oficina o casa totalmente GRATIS.</p>
+                        <a href="https://wa.me/573143996019" target="_blank" class="bg-white text-black text-center block py-3 rounded-xl font-black text-[10px] hover:bg-red-600 hover:text-white transition-colors">PEDIR RECOGIDA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-40 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
+            <div class="reveal">
+                <h2 class="text-6xl font-black mb-12 tracking-tighter uppercase italic">Sede <br><span class="text-red-600">Calle 61</span></h2>
+                <div class="space-y-10">
+                    <div class="flex items-center gap-8">
+                        <div class="w-16 h-16 rounded-3xl bg-zinc-900 flex items-center justify-center text-red-600 border border-white/5">
+                            <i class="fa-solid fa-map-location-dot text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-bold opacity-30 uppercase tracking-[0.3em] mb-1">Dirección Oficial</p>
+                            <p class="text-xl font-bold">Calle 61 No. 17 - 07 Local 1</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-8">
+                        <div class="w-16 h-16 rounded-3xl bg-zinc-900 flex items-center justify-center text-red-600 border border-white/5">
+                            <i class="fa-solid fa-mobile-screen-button text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-bold opacity-30 uppercase tracking-[0.3em] mb-1">Contacto Comercial</p>
+                            <p class="text-xl font-bold italic">314 399 6019</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-16 flex gap-4">
+                    <a href="https://www.google.com/maps/dir//Calle+61+%2317-07,+Bogot%C3%A1/@4.6483489,-74.068305,17z" target="_blank" class="glass-dark px-10 py-5 rounded-2xl font-black uppercase text-xs hover:bg-white hover:text-black transition-all">Ver en Google Maps</a>
+                    <a href="https://wa.me/573143996019" target="_blank" class="bg-red-600 px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all shadow-xl shadow-red-900/20">Chat Promotor</a>
+                </div>
+            </div>
+            
+            <div class="map-container h-[600px] rounded-[4rem] overflow-hidden border-[1px] border-white/10 reveal shadow-3xl">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7161833182845!2d-74.07087992415174!3d4.648348895326442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a2444983059%3A0x67396a80479e0a0e!2sCl.%2061%20%2317-07%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1715000000000!5m2!1ses!2sco" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="https://empleos.net/rhmanager/logos/original_size/71188_20210325113156.png" class="h-8 mx-auto mb-8 opacity-20 grayscale">
+        <p class="text-zinc-600 text-[9px] font-bold uppercase tracking-[0.6em] mb-4">Envía Colvanes S.A.S. • Chapinero Calle 61 Bogotá</p>
+        <p class="text-zinc-400 text-sm italic">"Entre más envíos realices, más puntos acumulas con Envía y Gana"</p>
+    </footer>
+
+    <a href="https://wa.me/573143996019" target="_blank" class="fixed bottom-12 right-12 z-[100] group">
+        <div class="absolute -inset-4 bg-green-500/20 rounded-full blur-2xl group-hover:bg-green-500/40 transition-all animate-pulse"></div>
+        <div class="relative bg-green-500 w-20 h-20 rounded-[2.2rem] flex items-center justify-center text-4xl shadow-2xl transition-all group-hover:scale-110 group-hover:rotate-12">
+            <i class="fa-brands fa-whatsapp text-white"></i>
+        </div>
+    </a>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
