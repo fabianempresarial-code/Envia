@@ -18,11 +18,21 @@
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .section-hover:hover .glass-dark {
-            border-color: var(--envia-red);
-            box-shadow: 0 0 40px rgba(227, 30, 36, 0.15);
-            transform: translateY(-10px);
-            background: rgba(20, 20, 20, 0.9);
+        /* --- SÚPER ANIMACIÓN DE TÍTULO --- */
+        .hero-title-container {
+            perspective: 1000px;
+        }
+        
+        .animated-title {
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            transform-style: preserve-3d;
+            display: inline-block;
+        }
+
+        .hero-title-container:hover .animated-title {
+            transform: rotateX(10deg) rotateY(-5deg) translateZ(50px);
+            text-shadow: 0 20px 40px rgba(227, 30, 36, 0.3);
+            filter: drop-shadow(0 0 15px rgba(227, 30, 36, 0.5));
         }
 
         .gradient-text {
@@ -31,6 +41,7 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* --- FLOTACIÓN DE IMAGEN --- */
         .hero-img-box {
             animation: float 6s ease-in-out infinite;
             filter: drop-shadow(0 0 30px rgba(227, 30, 36, 0.2));
@@ -66,22 +77,26 @@
         </div>
     </nav>
 
-    <section class="relative min-h-screen flex items-center pt-20 px-6">
+    <section class="relative min-h-screen flex items-center pt-20 px-6 overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none" 
              style="background-image: radial-gradient(circle at 20% 30%, #e31e24 0%, transparent 40%);"></div>
         
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center relative">
-            <div class="reveal active pt-16 md:pt-0">
+            <div class="reveal active hero-title-container">
                 <h2 class="text-red-600 font-bold tracking-[0.6em] uppercase text-[10px] mb-6 block">Logística de Élite • Chapinero</h2>
-                <h1 class="text-6xl md:text-8xl font-black leading-tight mb-8 italic tracking-tighter py-1">
-                    PASIÓN <br><span class="gradient-text uppercase">POR LO QUE HACEMOS</span>
-                </h1>
+                
+                <div class="animated-title cursor-default">
+                    <h1 class="text-6xl md:text-8xl font-black leading-[1.1] mb-8 italic tracking-tighter pb-2">
+                        PASIÓN <br><span class="gradient-text uppercase">POR LO QUE HACEMOS</span>
+                    </h1>
+                </div>
+
                 <p class="text-zinc-500 text-xl mb-12 font-light leading-relaxed max-w-lg">
                     En <strong>Envía Colvanes S.A.S. Chapinero Calle 61</strong>, transformamos la logística en una experiencia. Realiza tus envíos de paquetes y mercancía con nosotros.
                 </p>
                 <div class="flex flex-wrap gap-6 mb-16 lg:mb-0">
-                    <a href="https://wa.me/573143996019" target="_blank" class="bg-white text-black px-12 py-5 rounded-2xl font-black hover:bg-red-600 hover:text-white transition-all duration-500 shadow-2xl flex items-center gap-4 uppercase text-sm">
-                        <i class="fa-brands fa-whatsapp text-2xl"></i> Solicitar Recogida
+                    <a href="https://wa.me/573143996019" target="_blank" class="bg-white text-black px-12 py-5 rounded-2xl font-black hover:bg-red-600 hover:text-white transition-all duration-500 shadow-2xl flex items-center gap-4 uppercase text-sm group">
+                        <i class="fa-brands fa-whatsapp text-2xl group-hover:rotate-12 transition-transform"></i> Solicitar Recogida
                     </a>
                 </div>
             </div>
@@ -107,28 +122,28 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="section-hover">
-                    <div class="glass-dark p-12 rounded-[3.5rem] h-full">
+                <div class="group">
+                    <div class="glass-dark p-12 rounded-[3.5rem] h-full border border-transparent hover:border-red-600/50 transition-all duration-500">
                         <i class="fa-solid fa-file-shield text-3xl text-red-600 mb-10"></i>
                         <h4 class="text-2xl font-bold mb-4 uppercase italic">Documentos</h4>
                         <p class="text-zinc-500 text-sm leading-relaxed">Mensajería expresa nacional con seguimiento web.</p>
                     </div>
                 </div>
-                <div class="section-hover">
-                    <div class="glass-dark p-12 rounded-[3.5rem] h-full border-t-2 border-red-600/30">
+                <div class="group">
+                    <div class="glass-dark p-12 rounded-[3.5rem] h-full border-t-2 border-red-600/30 hover:border-red-600 transition-all duration-500">
                         <i class="fa-solid fa-box-open text-3xl text-red-600 mb-10"></i>
                         <h4 class="text-2xl font-bold mb-4 uppercase italic">Paquetes</h4>
                         <p class="text-zinc-500 text-sm leading-relaxed">Realiza tus envíos a nivel nacional e internacional.</p>
                     </div>
                 </div>
-                <div class="section-hover">
-                    <div class="glass-dark p-12 rounded-[3.5rem] h-full">
+                <div class="group">
+                    <div class="glass-dark p-12 rounded-[3.5rem] h-full border border-transparent hover:border-red-600/50 transition-all duration-500">
                         <i class="fa-solid fa-truck-ramp-box text-3xl text-red-600 mb-10"></i>
-                        <h4 class="text-2xl font-bold mb-4 uppercase italic">Mercancía Terrestre y Aerea</h4>
+                        <h4 class="text-2xl font-bold mb-4 uppercase italic">Mercancía</h4>
                         <p class="text-zinc-500 text-sm leading-relaxed">Distribución de carga nacional, terrestre y vía aérea.</p>
                     </div>
                 </div>
-                <div class="section-hover">
+                <div class="group">
                     <div class="glass-dark p-12 rounded-[3.5rem] h-full bg-gradient-to-br from-red-600/10 to-transparent">
                         <span class="bg-red-600 text-[9px] font-black px-3 py-1 rounded-full uppercase mb-6 inline-block">Zona Chapinero</span>
                         <h4 class="text-2xl font-bold mb-4 uppercase italic leading-none">Recogida <br><span class="text-red-600">SIN COSTO</span></h4>
@@ -164,21 +179,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="mt-16 flex flex-wrap gap-4">
-                    <a href="https://www.google.com/maps/search/?api=1&query=Calle+61+No.+17-07+Local+1+Bogota" target="_blank" class="glass-dark px-10 py-5 rounded-2xl font-black uppercase text-xs hover:bg-white hover:text-black transition-all">Ver en Google Maps</a>
-                    <a href="https://wa.me/573143996019" target="_blank" class="bg-red-600 px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all shadow-xl shadow-red-900/20 hover:bg-red-700">Chat Promotor</a>
-                </div>
             </div>
             
             <div class="map-container h-[400px] md:h-[600px] rounded-[4rem] overflow-hidden border-[1px] border-white/10 reveal shadow-3xl">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.711823123456!2d-74.06646872412345!3d4.646816495333333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a3f9a3f9a3f%3A0x1234567890abcdef!2sCalle+61+%2317-07%2C+Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1716912345678!5m2!1ses!2sco" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
+                <div class="w-full h-full bg-zinc-900 flex items-center justify-center italic text-zinc-700">
+                    Mapa Interactivo Calle 61
+                </div>
             </div>
         </div>
     </section>
