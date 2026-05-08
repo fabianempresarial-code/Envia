@@ -82,7 +82,9 @@
     <nav class="fixed w-full z-[100] px-6 py-6">
         <div class="max-w-7xl mx-auto glass-dark rounded-[2rem] px-8 py-4 flex justify-between items-center">
             <div class="flex items-center gap-4">
-                <img src="https://empleos.net/rhmanager/logos/original_size/71188_20210325113156.png" alt="Envía Logo" class="h-10">
+                <a href="https://envia.co/" target="_blank" class="hover:opacity-80 transition-opacity">
+                    <img src="https://empleos.net/rhmanager/logos/original_size/71188_20210325113156.png" alt="Envía Logo" class="h-10">
+                </a>
                 <span class="hidden md:block text-[10px] font-bold tracking-[0.4em] uppercase opacity-40 border-l border-white/10 pl-4">Colvanes S.A.S.</span>
             </div>
             <a href="https://wa.me/573143996019" target="_blank" class="bg-[#e31e24] hover:bg-white hover:text-black px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-300">
@@ -93,7 +95,7 @@
 
     <section class="relative min-h-screen flex items-center pt-20 px-6 overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none" 
-             style="background-image: radial-gradient(circle at 20% 30%, #e31e24 0%, transparent 40%);"></div>
+             style="background-image: radial-gradient(circle at 20% 30%, #e31e24) 0%, transparent 40%);"></div>
         
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center relative">
             <div class="reveal title-container">
@@ -116,11 +118,13 @@
             </div>
 
             <div class="hero-img-box flex justify-center lg:justify-end reveal" style="--delay: 0.2s">
-                <div class="glass-dark p-12 md:p-20 rounded-[4rem] border-white/10">
-                    <img src="https://empleos.net/rhmanager/logos/original_size/71188_20210325113156.png" 
-                         alt="Envía Corporativo" 
-                         class="w-full max-w-[550px] object-contain drop-shadow-2xl">
-                </div>
+                <a href="https://envia.co/" target="_blank" class="block cursor-pointer">
+                    <div class="glass-dark p-12 md:p-20 rounded-[4rem] border-white/10 hover:border-red-600/50 transition-colors">
+                        <img src="https://empleos.net/rhmanager/logos/original_size/71188_20210325113156.png" 
+                             alt="Envía Corporativo" 
+                             class="w-full max-w-[550px] object-contain drop-shadow-2xl">
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -129,36 +133,48 @@
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-6 reveal">
                 <div>
-                    <h3 class="text-5xl font-black italic uppercase tracking-tighter">Servicios <span class="text-red-600">Adicionales</span></h3>
+                    <h3 class="text-5xl font-black italic uppercase tracking-tighter">Portafolio de <span class="text-red-600">Servicios</span></h3>
                     <p class="text-zinc-600 mt-2 tracking-widest uppercase text-[10px] font-bold">Excelencia operativa Envia Colvanes S.A.S.</p>
                 </div>
                 <a href="https://wa.me/573143996019" target="_blank" class="text-red-600 font-bold hover:underline italic">Consultar todos los servicios →</a>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                 <div class="reveal card-animate" style="--delay: 0.1s">
-                    <div class="glass-dark p-12 rounded-[3.5rem] h-full">
+                    <div class="glass-dark p-10 rounded-[3.5rem] h-full border-t-2 border-white/20">
+                        <i class="fa-solid fa-magnifying-glass-location text-3xl text-red-600 mb-10"></i>
+                        <h4 class="text-2xl font-bold mb-4 uppercase italic leading-tight">Rastreo de Guías</h4>
+                        <p class="text-zinc-500 text-sm leading-relaxed mb-8">Consulte el estado de su envío en tiempo real con su número de guía.</p>
+                        <a href="https://envia.co/" target="_blank" class="inline-block border border-white/20 px-6 py-2 rounded-full text-[10px] font-black hover:bg-white hover:text-black transition-all uppercase">Rastrear ahora</a>
+                    </div>
+                </div>
+
+                <div class="reveal card-animate" style="--delay: 0.2s">
+                    <div class="glass-dark p-10 rounded-[3.5rem] h-full">
                         <i class="fa-solid fa-file-shield text-3xl text-red-600 mb-10"></i>
                         <h4 class="text-2xl font-bold mb-4 uppercase italic">Documentos</h4>
                         <p class="text-zinc-500 text-sm leading-relaxed">Mensajería expresa nacional con seguimiento web en tiempo real.</p>
                     </div>
                 </div>
-                <div class="reveal card-animate" style="--delay: 0.2s">
-                    <div class="glass-dark p-12 rounded-[3.5rem] h-full border-t-2 border-red-600/30">
+
+                <div class="reveal card-animate" style="--delay: 0.3s">
+                    <div class="glass-dark p-10 rounded-[3.5rem] h-full border-t-2 border-red-600/30">
                         <i class="fa-solid fa-box-open text-3xl text-red-600 mb-10"></i>
                         <h4 class="text-2xl font-bold mb-4 uppercase italic">Paquetes</h4>
                         <p class="text-zinc-500 text-sm leading-relaxed">Envíos nacionales e internacionales con los más altos estándares.</p>
                     </div>
                 </div>
-                <div class="reveal card-animate" style="--delay: 0.3s">
-                    <div class="glass-dark p-12 rounded-[3.5rem] h-full">
+
+                <div class="reveal card-animate" style="--delay: 0.4s">
+                    <div class="glass-dark p-10 rounded-[3.5rem] h-full">
                         <i class="fa-solid fa-truck-ramp-box text-3xl text-red-600 mb-10"></i>
-                        <h4 class="text-2xl font-bold mb-4 uppercase italic">Mercancía Terrestre y Aerea</h4>
-                        <p class="text-zinc-500 text-sm leading-relaxed">Distribución de carga terrestre y aérea con entrega programada en almacenes de Cadena.</p>
+                        <h4 class="text-2xl font-bold mb-4 uppercase italic">Mercancía</h4>
+                        <p class="text-zinc-500 text-sm leading-relaxed">Distribución de carga terrestre y aérea con entrega programada.</p>
                     </div>
                 </div>
-                <div class="reveal card-animate" style="--delay: 0.4s">
-                    <div class="glass-dark p-12 rounded-[3.5rem] h-full bg-gradient-to-br from-red-600/10 to-transparent border-red-600/20">
+
+                <div class="reveal card-animate" style="--delay: 0.5s">
+                    <div class="glass-dark p-10 rounded-[3.5rem] h-full bg-gradient-to-br from-red-600/10 to-transparent border-red-600/20">
                         <span class="bg-red-600 text-[9px] font-black px-3 py-1 rounded-full uppercase mb-6 inline-block">Zona Chapinero</span>
                         <h4 class="text-2xl font-bold mb-4 uppercase italic leading-none">Recogida <br><span class="text-red-600">SIN COSTO</span></h4>
                         <p class="text-zinc-300 text-xs mb-8 font-bold italic">Recogemos sus envíos en su oficina o casa totalmente GRATIS.</p>
@@ -197,14 +213,16 @@
             
             <div class="map-container h-[400px] md:h-[600px] rounded-[4rem] overflow-hidden border border-white/10 reveal shadow-3xl" style="--delay: 0.3s">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.712686762312!2d-74.068228!3d4.645564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a4697994e63%3A0x6398f82875b28d7b!2sCl.%2061%20%2317-7%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1700000000000" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.719656123456!2d-74.0664!3d4.6482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a3999999999%3A0x9999999999999999!2sCalle%2061%20%2317-07!5e0!3m2!1ses!2sco!4v1700000000000" 
                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
     <footer class="py-20 text-center border-t border-white/5 px-6">
-        <img src="https://empleos.net/rhmanager/logos/original_size/71188_20210325113156.png" alt="Envía Logo" class="h-8 mx-auto mb-8 opacity-20 grayscale">
+        <a href="https://envia.co/" target="_blank" class="inline-block mb-8 hover:opacity-50 transition-opacity">
+            <img src="https://empleos.net/rhmanager/logos/original_size/71188_20210325113156.png" alt="Envía Logo" class="h-8 mx-auto grayscale">
+        </a>
         <p class="text-zinc-600 text-[9px] font-bold uppercase tracking-[0.6em] mb-4">Envía Colvanes S.A.S. • Chapinero Calle 61 Bogotá</p>
         <p class="text-zinc-400 text-sm italic">"Entre más envíos realices, más puntos acumulas con Envía y Gana"</p>
     </footer>
