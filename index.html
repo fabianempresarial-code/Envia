@@ -15,22 +15,17 @@
             background: rgba(15, 15, 15, 0.7);
             backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* --- SÚPER ANIMACIÓN 3D SIN RECORTE --- */
-        .title-container {
-            perspective: 1200px;
-            padding: 20px 0;
-        }
-        
+        /* --- TÍTULO 3D --- */
+        .title-container { perspective: 1200px; padding: 20px 0; }
         .animated-title {
             display: inline-block;
             transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             transform-style: preserve-3d;
             will-change: transform;
         }
-
         .title-container:hover .animated-title {
             transform: rotateX(10deg) rotateY(-5deg) translateZ(40px) scale(1.02);
             filter: drop-shadow(0 20px 50px rgba(227, 30, 36, 0.4));
@@ -41,15 +36,27 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
-            padding-right: 10px; /* Evita recorte horizontal */
+            padding-right: 10px;
         }
 
-        /* Hover Efectos en Tarjetas */
-        .section-hover:hover .glass-dark {
+        /* --- ANIMACIÓN DE REVELACIÓN (SCROLL) --- */
+        .reveal { 
+            opacity: 0; 
+            transform: translateY(50px); 
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            transition-delay: var(--delay, 0s);
+        }
+        .reveal.active { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+
+        /* --- EFECTO HOVER EN TARJETAS --- */
+        .card-animate:hover .glass-dark {
             border-color: var(--envia-red);
-            box-shadow: 0 0 80px rgba(227, 30, 36, 0.15);
-            transform: translateY(-30px);
-            background: rgba(20, 20, 20, 0.9);
+            box-shadow: 0 20px 80px rgba(227, 30, 36, 0.2);
+            transform: translateY(-15px) scale(1.02);
+            background: rgba(25, 25, 25, 0.95);
         }
 
         .hero-img-box {
@@ -60,9 +67,6 @@
             0%, 100% { transform: translateY(0) scale(1); }
             50% { transform: translateY(-25px) scale(1.02); }
         }
-
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
 
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: var(--deep-dark); }
@@ -76,12 +80,12 @@
 <body>
 
     <nav class="fixed w-full z-[100] px-6 py-6">
-        <div class="max-w-7xl mx-auto glass-dark rounded-[2rem] px-8 py-4 flex justify-between items-center border-white/5">
+        <div class="max-w-7xl mx-auto glass-dark rounded-[2rem] px-8 py-4 flex justify-between items-center">
             <div class="flex items-center gap-4">
                 <img src="https://empleos.net/rhmanager/logos/original_size/71188_20210325113156.png" alt="Envía Logo" class="h-10">
                 <span class="hidden md:block text-[10px] font-bold tracking-[0.4em] uppercase opacity-40 border-l border-white/10 pl-4">Colvanes S.A.S.</span>
             </div>
-            <a href="https://wa.me/573143996019" target="_blank" class="bg-[#e31e24] hover:bg-white hover:text-black px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-300 shadow-lg shadow-red-900/20">
+            <a href="https://wa.me/573143996019" target="_blank" class="bg-[#e31e24] hover:bg-white hover:text-black px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-300">
                 Cotizar WhatsApp
             </a>
         </div>
@@ -92,7 +96,7 @@
              style="background-image: radial-gradient(circle at 20% 30%, #e31e24 0%, transparent 40%);"></div>
         
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center relative">
-            <div class="reveal active title-container">
+            <div class="reveal title-container">
                 <h2 class="text-red-600 font-bold tracking-[0.6em] uppercase text-[10px] mb-4 block">Envios de Mercancia, Documentos y Paquetes • Chapinero</h2>
                 
                 <div class="animated-title">
@@ -102,7 +106,7 @@
                 </div>
 
                 <p class="text-zinc-500 text-xl mb-12 font-light leading-relaxed max-w-lg">
-                    En <strong>Envía Chapinero Calle 61</strong>, "Ubicados estratégicamente en Chapinero (Calle 61 # 17-07), somos su aliado principal para el envío de mercancías y sobres. Ofrecemos soluciones rápidas de logística nacional e internacional
+                    En <strong>Envía Chapinero Calle 61</strong>, somos su aliado estratégico. Ubicados en el corazón de la ciudad para conectar sus sueños con el mundo.
                 </p>
                 <div class="flex flex-wrap gap-6 mb-16 lg:mb-0">
                     <a href="https://wa.me/573143996019" target="_blank" class="bg-white text-black px-12 py-5 rounded-2xl font-black hover:bg-red-600 hover:text-white transition-all duration-500 shadow-2xl flex items-center gap-4 uppercase text-sm group">
@@ -111,7 +115,7 @@
                 </div>
             </div>
 
-            <div class="hero-img-box flex justify-center lg:justify-end reveal active">
+            <div class="hero-img-box flex justify-center lg:justify-end reveal" style="--delay: 0.2s">
                 <div class="glass-dark p-12 md:p-20 rounded-[4rem] border-white/10">
                     <img src="https://empleos.net/rhmanager/logos/original_size/71188_20210325113156.png" 
                          alt="Envía Corporativo" 
@@ -132,29 +136,29 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="section-hover">
+                <div class="reveal card-animate" style="--delay: 0.1s">
                     <div class="glass-dark p-12 rounded-[3.5rem] h-full">
                         <i class="fa-solid fa-file-shield text-3xl text-red-600 mb-10"></i>
                         <h4 class="text-2xl font-bold mb-4 uppercase italic">Documentos</h4>
-                        <p class="text-zinc-500 text-sm leading-relaxed">Mensajería expresa nacional con seguimiento web.</p>
+                        <p class="text-zinc-500 text-sm leading-relaxed">Mensajería expresa nacional con seguimiento web en tiempo real.</p>
                     </div>
                 </div>
-                <div class="section-hover">
+                <div class="reveal card-animate" style="--delay: 0.2s">
                     <div class="glass-dark p-12 rounded-[3.5rem] h-full border-t-2 border-red-600/30">
                         <i class="fa-solid fa-box-open text-3xl text-red-600 mb-10"></i>
                         <h4 class="text-2xl font-bold mb-4 uppercase italic">Paquetes</h4>
-                        <p class="text-zinc-500 text-sm leading-relaxed">Envíos nacionales e internacionales con total seguridad.</p>
+                        <p class="text-zinc-500 text-sm leading-relaxed">Envíos nacionales e internacionales con los más altos estándares.</p>
                     </div>
                 </div>
-                <div class="section-hover">
+                <div class="reveal card-animate" style="--delay: 0.3s">
                     <div class="glass-dark p-12 rounded-[3.5rem] h-full">
                         <i class="fa-solid fa-truck-ramp-box text-3xl text-red-600 mb-10"></i>
                         <h4 class="text-2xl font-bold mb-4 uppercase italic">Mercancía</h4>
-                        <p class="text-zinc-500 text-sm leading-relaxed">Distribución de carga nacional , terrestre, vía aérea Entrega en almacenes de Cadena con cita previa.</p>
+                        <p class="text-zinc-500 text-sm leading-relaxed">Distribución de carga terrestre y aérea con entrega programada.</p>
                     </div>
                 </div>
-                <div class="section-hover">
-                    <div class="glass-dark p-12 rounded-[3.5rem] h-full bg-gradient-to-br from-red-600/10 to-transparent">
+                <div class="reveal card-animate" style="--delay: 0.4s">
+                    <div class="glass-dark p-12 rounded-[3.5rem] h-full bg-gradient-to-br from-red-600/10 to-transparent border-red-600/20">
                         <span class="bg-red-600 text-[9px] font-black px-3 py-1 rounded-full uppercase mb-6 inline-block">Zona Chapinero</span>
                         <h4 class="text-2xl font-bold mb-4 uppercase italic leading-none">Recogida <br><span class="text-red-600">SIN COSTO</span></h4>
                         <p class="text-zinc-300 text-xs mb-8 font-bold italic">Recogemos sus envíos en su oficina o casa totalmente GRATIS.</p>
@@ -191,9 +195,9 @@
                 </div>
             </div>
             
-            <div class="map-container h-[400px] md:h-[600px] rounded-[4rem] overflow-hidden border-[1px] border-white/10 reveal shadow-3xl">
+            <div class="map-container h-[400px] md:h-[600px] rounded-[4rem] overflow-hidden border border-white/10 reveal shadow-3xl" style="--delay: 0.3s">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7628886981!2d-74.068307!3d4.636836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a3650207a97%3A0x67399f911043236!2sCl.%2061%20%2317-07%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1700000000000" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.712686762312!2d-74.068228!3d4.645564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a4697994e63%3A0x6398f82875b28d7b!2sCl.%2061%20%2317-7%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1700000000000" 
                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
@@ -213,11 +217,18 @@
     </a>
 
     <script>
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
             });
-        }, { threshold: 0.1 });
+        }, observerOptions);
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
